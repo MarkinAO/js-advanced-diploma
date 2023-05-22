@@ -7,6 +7,7 @@ export default class GameController {
   init() {
     // TODO: add event listeners to gamePlay events
     // TODO: load saved stated from stateService
+    this.gamePlay.drawUi('prairie')
   }
 
   onCellClick(index) {
