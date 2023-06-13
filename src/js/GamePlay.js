@@ -1,4 +1,5 @@
 import { calcHealthLevel, calcTileType } from './utils';
+import app from './app'
 
 export default class GamePlay {
   constructor() {
@@ -37,8 +38,14 @@ export default class GamePlay {
         <button data-id="action-save" class="btn">Save Game</button>
         <button data-id="action-load" class="btn">Load Game</button>
       </div>
+      <div class="controls score-panel-wrap">
+        <div class="score-panel btn">Рекорд: 0</div>
+      </div>      
       <div class="board-container">
         <div data-id="board" class="board"></div>
+      </div>
+      <div class="controls score-panel-wrap">
+        <div class="message"></div>
       </div>
     `;
 
@@ -204,7 +211,9 @@ export default class GamePlay {
   }
 
   static showError(message) {
-    alert(message);
+    const messagePanel = document.querySelector('.message')
+    messagePanel.textContent = message;
+    setTimeout(() => messagePanel.textContent = '', 3000);
   }
 
   static showMessage(message) {

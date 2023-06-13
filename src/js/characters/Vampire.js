@@ -7,5 +7,12 @@ export default class Undead extends Character {
     this.defence = 25;
     this.range = 2;
     this.attackRange = 2;
+    this.team = 'Skynet';
+    this.criticalDamage = 15;
+    this.criticalDamageChance = 80;
+
+    for (let i = 0; i < level - 1; i++) {
+      this.levelUp();
+    }
   }
 }

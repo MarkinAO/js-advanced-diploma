@@ -7,5 +7,8 @@ export default class Bowman extends Character {
     this.defence = 25;
     this.range = 2;
     this.attackRange = 2;
+    this.team = 'Player';
+    this.criticalDamage = 15;
+    this.criticalDamageChance = 80;
   }
 }
