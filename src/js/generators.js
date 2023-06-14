@@ -22,7 +22,7 @@ export function* characterGenerator(allowedTypes, maxLevel, fixLevel = false) {
   while (true) {
     const randomType = Math.round(Math.random() * (allowedTypes.length - 1));
     let randomLevel = Math.round(Math.random() * (maxLevel - 1) + 1);
-    if(fixLevel) randomLevel = maxLevel;
+    if (fixLevel) randomLevel = maxLevel;
     yield new allowedTypes[randomType](randomLevel);
   }
 }
@@ -46,35 +46,35 @@ export function generateTeam(allowedTypes, maxLevel, characterCount) {
 
 export function reGenerateTeam(chracters) {
   const team = [];
-  
-  chracters.forEach(char => {    
+
+  chracters.forEach((char) => {
     let type;
     switch (char.character.type) {
       case 'bowman':
         type = [Bowman];
         break;
       case 'swordsman':
-        type = [Swordsman];        
+        type = [Swordsman];
         break;
       case 'magician':
-        type = [Magician];        
+        type = [Magician];
         break;
       case 'vampire':
-        type = [Vampire];        
+        type = [Vampire];
         break;
       case 'undead':
-        type = [Undead];        
+        type = [Undead];
         break;
       case 'daemon':
-        type = [Daemon];        
+        type = [Daemon];
         break;
-    }    
+    }
 
     const newChar = characterGenerator(type, char.character.level, true).next().value;
     newChar.attack = char.character.attack;
     newChar.defence = char.character.defence;
     newChar.health = char.character.health;
-    newChar.level = char.character.level;    
+    newChar.level = char.character.level;
     team.push(new PositionedCharacter(newChar, char.position));
   });
   return team;

@@ -8,8 +8,7 @@ export default class Zombie extends Character {
     this.range = 4;
     this.attackRange = 1;
     this.team = 'Skynet';
-    this.criticalDamage = 10;
-    this.criticalDamageChance = 85;
+    this.evasion = 15;
 
     for (let i = 0; i < level - 1; i++) {
       this.levelUp();

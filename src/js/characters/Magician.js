@@ -8,7 +8,6 @@ export default class Magician extends Character {
     this.range = 1;
     this.attackRange = 4;
     this.team = 'Player';
-    this.criticalDamage = 20;
-    this.criticalDamageChance = 75;
+    this.evasion = 5;
   }
 }

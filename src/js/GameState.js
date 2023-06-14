@@ -15,7 +15,7 @@ export default class GameState {
 
   saveState(data) {
     for (const key in data) {
-      this.currentState[key] = data[key];      
+      this.currentState[key] = data[key];
     }
     this.currentState.activePlayer = this.activePlayer;
     this.currentState.bestScore = this.bestScore;
@@ -27,7 +27,7 @@ export default class GameState {
   }
 
   changePlayer() {
-    if(this.activePlayer === 'Player') {
+    if (this.activePlayer === 'Player') {
       this.activePlayer = 'Skynet';
     } else {
       this.activePlayer = 'Player';
@@ -35,7 +35,7 @@ export default class GameState {
   }
 
   addPoints(damage) {
-    if(this.activePlayer === 'Player') this.currentSkore += damage;
+    if (this.activePlayer === 'Player') this.currentSkore += damage;
   }
 
   clearPoints() {
@@ -43,12 +43,12 @@ export default class GameState {
   }
 
   updateScore() {
-    if(this.currentSkore > this.bestScore) this.bestScore = this.currentSkore;
+    if (this.currentSkore > this.bestScore) this.bestScore = this.currentSkore;
     this.clearPoints();
     this.showScore();
   }
 
-  showScore() {    
+  showScore() {
     const score = Math.max(this.bestScore, this.currentSkore);
     const scorePanel = document.querySelector('.score-panel');
     scorePanel.textContent = `Рекорд: ${score}`;

@@ -1,5 +1,4 @@
 import { calcHealthLevel, calcTileType } from './utils';
-import app from './app'
 
 export default class GamePlay {
   constructor() {
@@ -70,10 +69,10 @@ export default class GamePlay {
     }
 
     this.cells = Array.from(this.boardEl.children);
-    this.cells.forEach(cell => {
+    this.cells.forEach((cell) => {
       cell.addEventListener('mouseover', (event) => this.onMouseoverCell(event));
       cell.addEventListener('mouseout', (event) => this.onMouseoutCell(event));
-    })
+    });
   }
 
   /**
@@ -104,12 +103,12 @@ export default class GamePlay {
     }
   }
 
-  addMouseoverCellListener(callback) {    
-    this.mouseoverCellListeners.push(callback)
+  addMouseoverCellListener(callback) {
+    this.mouseoverCellListeners.push(callback);
   }
 
-  addMouseoutCellListener(callback) {    
-    this.mouseoutCellListeners.push(callback)
+  addMouseoutCellListener(callback) {
+    this.mouseoutCellListeners.push(callback);
   }
 
   /**
@@ -211,7 +210,7 @@ export default class GamePlay {
   }
 
   static showError(message) {
-    const messagePanel = document.querySelector('.message')
+    const messagePanel = document.querySelector('.message');
     messagePanel.textContent = message;
     setTimeout(() => messagePanel.textContent = '', 3000);
   }

@@ -8,7 +8,6 @@ export default class Swordsman extends Character {
     this.range = 4;
     this.attackRange = 1;
     this.team = 'Player';
-    this.criticalDamage = 10;
-    this.criticalDamageChance = 85;
+    this.evasion = 15;
   }
 }

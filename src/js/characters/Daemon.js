@@ -8,9 +8,8 @@ export default class Daemon extends Character {
     this.range = 1;
     this.attackRange = 4;
     this.team = 'Skynet';
-    this.criticalDamage = 20;
-    this.criticalDamageChance = 75;
-    
+    this.evasion = 5;
+
     for (let i = 0; i < level - 1; i++) {
       this.levelUp();
     }
